@@ -16,10 +16,10 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 //  Fazendo o require da pasta models
-//  requireDir('./models');
+requireDir('./models');
 
 //  Fazendo o require das rotas
-//  app.use('/api', require('./routers/index.routes'));
+app.use('/api', require('./routers/index.routes'));
 
 //  Iniciando o servidor
 app.listen(3001);
