@@ -1,7 +1,6 @@
 //Criando o Schema
 
 const mongoose = require('mongoose');
-// const mongoosePaginate = require('mongoose-paginate');
 
 const AulaSchema = new mongoose.Schema({
   aluno: {
@@ -13,7 +12,7 @@ const AulaSchema = new mongoose.Schema({
     required: true
   },
   disciplina: {
-    type: String, // ou Object ?
+    type: String,
     required: true,
   },
   status: {
@@ -34,8 +33,5 @@ const AulaSchema = new mongoose.Schema({
   },
 });
 
-// Registrando o mongoose paginate da Aplicação
-// UserSchema.plugin(mongoosePaginate);
-
 // Registrando o schema
-module.exports = mongoose.model('Aula', AulaSchema);
+module.exports = mongoose.model('Aulas', AulaSchema);
