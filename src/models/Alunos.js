@@ -36,7 +36,7 @@ const AlunoSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  nivelEscolaridade: {
+  grauEscolaridade: {
     type: String,
     required: false,
   },
@@ -45,10 +45,6 @@ const AlunoSchema = new mongoose.Schema({
     required: false,
   },
   genero: {
-    type: String,
-    required: false,
-  },
-  orientacaoSexual: {
     type: String,
     required: false,
   },
