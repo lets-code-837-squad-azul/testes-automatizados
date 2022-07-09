@@ -25,7 +25,7 @@ const AlunoSchema = new mongoose.Schema({
   },
   dataNascimento: {
     type: Date,
-    required: true,
+    required: false,
   },
   endereco: {
     type: Object,

@@ -25,7 +25,7 @@ const ProfessorSchema = new mongoose.Schema({
   },
   dataNascimento: {
     type: Date,
-    required: true,
+    required: false,
   },
   disciplina: {
     type: String,
