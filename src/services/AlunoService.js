@@ -1,12 +1,12 @@
-const AulaRepository = require('../repository/AulasRepository')
+const AlunosRepository = require('../repository/AlunoRepository')
 
 
-const createAula = async (aula) => {
+const createAluno = async (aluno) => {
     try {
-        await AulaRepository.createAula(aula)
+        await AlunosRepository.createAluno(aluno)
         return {
             statusCode: 201,
-            data: aula
+            data: aluno
         }
     }
     catch (error) {
@@ -18,5 +18,5 @@ const createAula = async (aula) => {
 }
 
 module.exports = {
-    createAula
+    createAluno
 }
