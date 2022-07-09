@@ -7,7 +7,13 @@ const postAluno = async (req, res) => {
     return res.status(response.statusCode).json(response.data)
 }
 
+const findAlunos = async (req, res) =>{
+    const response = await AlunoService.findAlunos()
+    return res.status(response.statusCode).json(response.data)
+}
+
 
 module.exports = {
-    postAluno
+    postAluno,
+    findAlunos
 }

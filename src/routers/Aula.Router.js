@@ -4,7 +4,6 @@ const routerAula = express.Router()
 
 
 routerAula.post('', AulaController.postAula)
+routerAula.get('', AulaController.findAulas)
 
-module.exports = {
-    routerAula
-}
+module.exports = routerAula
