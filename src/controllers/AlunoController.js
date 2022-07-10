@@ -15,18 +15,16 @@ const findAlunos = async (req, res) =>{
 const deleteAlunos = async (req, res) => {
     const id = req.params.id;
     const response = await AlunoService.deleteAlunos(id)
-    return res.status(200).json(`Requisição recebida com sucesso delete! ${id}`);
+    return res.status(200).json(response.data);
 }
 
-
-const patchAlunos = (req, res) => {
+const patchAlunos = async (req, res) => {
     const aluno = req.body
+    console.log(aluno)
     const id = req.params.id;
-    /* const response = await AlunoService.patchAlunos(id, aluno) */
-    return res.status(201).json(`Requisição recebida com sucesso alteração! ${id}`);
+    const response = await AlunoService.patchAlunos(id, aluno)
+    return res.status(201).json(response.data);
 }
-
-
 
 module.exports = {
     postAluno,
