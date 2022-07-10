@@ -33,7 +33,42 @@ const findAlunos = async () =>{
     }
 }
 
+const deleteAlunos = async (id) =>{
+    try {
+        const alunos = await AlunosRepository.deleteAlunos(id)
+        
+        return {
+            statusCode: 200,
+            data: alunos
+        }
+    }
+    catch (error) {
+        return {
+            statusCode: 500,
+            data: error.message
+        }
+    }
+}
+
+const patchAlunos = async (id, aluno) =>{
+    try {
+        const alunos = await AlunosRepository.patchAlunos(id, aluno)
+        return {
+            statusCode: 200,
+            data: alunos
+        }
+    }
+    catch (error) {
+        return {
+            statusCode: 500,
+            data: error.message
+        }
+    }
+}
+
 module.exports = {
     createAluno,
-    findAlunos
+    findAlunos,
+    deleteAlunos,
+    patchAlunos
 }
