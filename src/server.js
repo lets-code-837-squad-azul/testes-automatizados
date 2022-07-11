@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const requireDir = require('require-dir'); // acesso a pasta
+const requireDir = require('require-dir'); // acesso a pasta (diretório)
 require('dotenv').config();
 
-//  Iniciando o servidor
+// SERVIDOR
 const app = express();
 
 //  Determinar o uso de JSON
@@ -15,10 +15,10 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true
 });
 
-//  Fazendo o require da pasta models
+//  Fazendo o require da pasta models (diretório)
 requireDir('./models');
 
-//  Fazendo o require das rotas
+//  Fazendo o require das rotas (GERENCIADOR DE ROTAS)
 app.use('/api', require('./routers/index.routes'));
 
 //  Iniciando o servidor

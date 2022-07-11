@@ -1,7 +1,6 @@
-//Criando o Schema
+const mongoose = require('mongoose'); 
 
-const mongoose = require('mongoose');
-
+//SCHEMA ("tabela")
 const AlunoSchema = new mongoose.Schema({
   nome: {
     type: String,

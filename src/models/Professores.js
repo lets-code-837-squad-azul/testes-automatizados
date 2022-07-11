@@ -1,7 +1,6 @@
-//Criando o Schema
-
 const mongoose = require('mongoose');
 
+//SCHEMA ("tabela")
 const ProfessorSchema = new mongoose.Schema({
   nome: {
     type: String,

@@ -1,12 +1,13 @@
 const express = require('express');
 const routes = express.Router();
-const AlunoRouter = require('./Aluno.Router')
-const AulaRouter = require('./Aula.Router')
-const ProfessorRouter = require('./Professor.Router')
+const AlunoRouter = require('./Aluno.Router') // ROTA ALUNO
+const AulaRouter = require('./Aula.Router') // ROTA AULA
+const ProfessorRouter = require('./Professor.Router') // ROTA PROFESSOR
 
-routes.use('/aluno', AlunoRouter)
-routes.use('/aula', AulaRouter)
-routes.use('/professor', ProfessorRouter)
+// GERENCIADOR DE ROTAS
+routes.use('/aluno', AlunoRouter) // acesso as rotas
+routes.use('/aula', AulaRouter) // acesso as rotas
+routes.use('/professor', ProfessorRouter) // acesso as rotas
 
 
 
