@@ -1,12 +1,22 @@
-const ProfessorRepository = require('../repository/ProfessorRepository')
+const ProfessorRepository = require('../repository/ProfessorRepository') // METODO CRUD ALUNO PROFESSOR
 
+// REGRA DE NEGÓCIO
 
+// regra de negócio POST
 const createProfessor = async (prof) => {
     try {
-        const novoProfessor = await ProfessorRepository.createProfessor(prof)
-        return {
-            statusCode: 201,
-            data: novoProfessor
+        const profexiste = await ProfessorRepository.findProfessoresBycpf(prof.cpf) // filtra usuário pelo "cpf"
+        if(profexiste){
+            return {
+                statusCode: 406,
+                data: "CPF já cadastrado!!!"
+            }
+        } else {
+            const novoProfessor = await ProfessorRepository.createProfessor(prof) // cria no cadastro
+            return {
+                statusCode: 201,
+                data: novoProfessor
+            }
         }
     }
     catch (error) {
@@ -17,13 +27,73 @@ const createProfessor = async (prof) => {
     }
 }
 
+// regra de negócio GET
 const findProfessores = async () =>{
     try {
-        const newProfessor = await ProfessorRepository.findProfessores()
+        const Professor = await ProfessorRepository.findProfessores() // busca cadastro de todos os usuarios
+        if (!Professor){
+            return {
+                statusCode: 400,
+                data: "Nenhum usuário encontrado!"
+            }
+        } else {
+            return {
+                statusCode: 200,
+                data: Professor
+            }
+        }   
+    }
+    catch (error) {
         return {
-            statusCode: 200,
-            data: newProfessor
+            statusCode: 500,
+            data: error.message
         }
+    }
+}
+
+// regra de negócio DELETE
+const deleteProfessores = async (id) =>{
+    try {
+        const profexiste = await ProfessorRepository.findProfessoresByid(id) // filtra usuário pelo "id"
+        if(profexiste){
+            const Professor = await ProfessorRepository.deleteProfessores(id) // deleta usuario pelo "id" 
+            return {
+                statusCode: 200,
+                data: Professor
+            }
+        } else {
+            return {
+                statusCode: 406,
+                data: "Id não encotrado!"
+            }
+        }   
+    }
+    catch (error) {
+        return {
+            statusCode: 500,
+            data: error.message
+        }
+    }
+}
+
+// regra de negócio PATCH
+const patchProfessores = async (id, prof) =>{
+
+    try {
+        const profexiste = await ProfessorRepository.findProfessoresByid(id); // filtra usuério pelo "id"
+        if(profexiste){
+            const Professor = await ProfessorRepository.patchProfessores(id, prof) // deleta usuario pelo "id"
+            return {
+                statusCode: 200,
+                data: Professor
+            }
+        } else {
+            return {
+                statusCode: 406,
+                data: "Id não encotrado!"
+            }
+        }
+        
     }
     catch (error) {
         return {
@@ -35,5 +105,7 @@ const findProfessores = async () =>{
 
 module.exports = {
     createProfessor,
-    findProfessores
+    findProfessores,
+    deleteProfessores,
+    patchProfessores
 }
