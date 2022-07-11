@@ -80,9 +80,9 @@ const deleteProfessores = async (id) =>{
 const patchProfessores = async (id, prof) =>{
 
     try {
-        const profexiste = await ProfessorRepository.findAlunoByid(id); // filtra usuério pelo "id"
+        const profexiste = await ProfessorRepository.findProfessoresByid(id); // filtra usuério pelo "id"
         if(profexiste){
-            const Professor = await ProfessorRepository.patchAlunos(id, prof) // deleta usuario pelo "id"
+            const Professor = await ProfessorRepository.patchProfessores(id, prof) // deleta usuario pelo "id"
             return {
                 statusCode: 200,
                 data: Professor
