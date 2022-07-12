@@ -9,8 +9,7 @@ class World {
         //  Variáveis dos testes
         this.aluno = {},
         this.professor = {},
-        this.disciplina = '',
-        this.status = ''
+        this.aula = {},
         this.response = {}
     }
 
@@ -36,10 +35,10 @@ class World {
 
     //  Armazena os dados da aula
     setAula(aluno, professor, disciplina, status) {
-        this.aluno = aluno;
-        this.professor = professor;
-        this.disciplina = disciplina;
-        this.status = status;
+        this.aula.aluno = aluno;
+        this.aula.professor = professor;
+        this.aula.disciplina = disciplina;
+        this.aula.status = status;
     }
     
     //  Realiza uma requisição POST para o servidor
