@@ -74,10 +74,10 @@ const patchAulas = async (id, aula) =>{
     try {
         const aulaexiste = await AulaRepository.findAulaByid(id) // filtra usuário pelo "id"
         if(aulaexiste){
-            const aula = await AulaRepository.patchAulas(id, aula) // deleta usuario pelo "id"
+            const altera = await AulaRepository.patchAulas(id, aula) // altera usuario pelo "id"
             return {
                 statusCode: 200,
-                data: aula
+                data: altera
             }
         } else {
             return {
