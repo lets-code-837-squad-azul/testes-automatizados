@@ -30,8 +30,8 @@ const findProfessoresByid = async (id) => {
 }
 
 // altera cadastro do usuário no banco de dados pelo número do "id" (PATCH)
-const patchProfessores = async (id, aluno) => {
-    return await Professores.findByIdAndUpdate(id, {$set:aluno}, {new: true})
+const patchProfessores = async (id, prof) => {
+    return await Professores.findByIdAndUpdate(id, {$set:prof}, {new: true})
 }
 
 module.exports = {

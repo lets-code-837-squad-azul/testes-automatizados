@@ -3,7 +3,7 @@ const express = require('express')
 const routerProfessor = express.Router()
 
 
-// ROTA ALUNO
+// ROTA PROFESSOR
 
 // rotas para os metodos (GET, POST, DELETE, PATCH) <=(VERBOS)
 routerProfessor.post('', ProfessorController.postProfessor)
