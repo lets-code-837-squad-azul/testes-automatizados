@@ -2,10 +2,11 @@
   "name": "testes-automatizados",
   "version": "1.0.0",
   "description": "**Sobre:**",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --inspect src/server.js"
+    "cucumber": "cucumber-js",
+    "dev": "nodemon --inspect src/server.js",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
     "require-dir": "^1.2.0"
   },
   "devDependencies": {
+    "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "cucumber": "^6.0.7",
     "jest": "^28.1.2",
     "nodemon": "^2.0.19"
   }
