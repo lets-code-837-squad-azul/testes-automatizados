@@ -25,7 +25,7 @@ const findAulas = async () =>{
         const getAulas = await AulaRepository.findAulas() // busca cadastro de todas as aulas
         if (!getAulas){
             return{
-                statusCode: 400,
+                statusCode: 404,
                 data: 'Nenhuma Aula encotrada!'
             }    
         } else {
@@ -55,7 +55,7 @@ const deleteAulas = async (id) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }    
@@ -69,7 +69,7 @@ const deleteAulas = async (id) =>{
 }
 
 // regra de negócio PATCH
-const patchAlunos = async (id, aula) =>{
+const patchAulas = async (id, aula) =>{
 
     try {
         const aulaexiste = await AulaRepository.findAulaByid(id) // filtra usuário pelo "id"
@@ -81,7 +81,7 @@ const patchAlunos = async (id, aula) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }   
@@ -98,5 +98,5 @@ module.exports = {
     createAula,
     findAulas,
     deleteAulas,
-    patchAlunos
+    patchAulas
 }

@@ -25,7 +25,7 @@ const findAulaByid = async (id) => {
 }
 
 // altera cadastro do usuário no banco de dados pelo número do "id" (PATCH)
-const  patchAulas = async (id, aula) => {
+const patchAulas = async (id, aula) => {
     return await Aulas.findByIdAndUpdate(id, {$set:aula}, {new: true})
 }
 

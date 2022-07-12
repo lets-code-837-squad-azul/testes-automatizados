@@ -8,7 +8,7 @@ const createProfessor = async (prof) => {
         const profexiste = await ProfessorRepository.findProfessoresBycpf(prof.cpf) // filtra usuário pelo "cpf"
         if(profexiste){
             return {
-                statusCode: 406,
+                statusCode: 409,
                 data: "CPF já cadastrado!!!"
             }
         } else {
@@ -33,7 +33,7 @@ const findProfessores = async () =>{
         const Professor = await ProfessorRepository.findProfessores() // busca cadastro de todos os usuarios
         if (!Professor){
             return {
-                statusCode: 400,
+                statusCode: 404,
                 data: "Nenhum usuário encontrado!"
             }
         } else {
@@ -63,7 +63,7 @@ const deleteProfessores = async (id) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }   
@@ -89,7 +89,7 @@ const patchProfessores = async (id, prof) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }

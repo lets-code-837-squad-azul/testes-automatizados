@@ -19,16 +19,15 @@ const findProfessores = async (req, res) =>{
 const deleteProfessores = async (req, res) => {
     const id = req.params.id;
     const response = await ProfessorService.deleteProfessores(id)
-    return res.status(200).json(response.data);
+    return res.status(response.statusCode).json(response.data);
 }
 
 // metodo (PATCH)
 const patchProfessores = async (req, res) => {
     const prof = req.body
-    //console.log(aluno)
     const id = req.params.id;
     const response = await ProfessorService.patchProfessores(id, prof)
-    return res.status(201).json(response.data);
+    return res.status(response.statusCode).json(response.data);
 }
 
 

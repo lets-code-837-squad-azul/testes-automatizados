@@ -9,7 +9,7 @@ const createAluno = async (aluno) => {
         const alunoexiste = await AlunosRepository.findAlunoBycpf(aluno.cpf) // filtra usuário pelo "cpf"
         if(alunoexiste){
             return {
-                statusCode: 406,
+                statusCode: 409,
                 data: "CPF já cadastrado!!!"
             }
         } else {
@@ -34,7 +34,7 @@ const findAlunos = async () =>{
         const alunos = await AlunosRepository.findAlunos() // busca cadastro de todos os usuarios
         if (!alunos){
             return {
-                statusCode: 400,
+                statusCode: 404,
                 data: "Nenhum usuário encontrado!"
             }
         } else {
@@ -64,7 +64,7 @@ const deleteAlunos = async (id) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }    
@@ -90,7 +90,7 @@ const patchAlunos = async (id, aluno) =>{
             }
         } else {
             return {
-                statusCode: 406,
+                statusCode: 404,
                 data: "Id não encotrado!"
             }
         }
