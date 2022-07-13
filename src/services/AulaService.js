@@ -48,10 +48,17 @@ const deleteAulas = async (id) =>{
     try {
         const aulaexiste = await AulaRepository.findAulaByid(id) // filtra usuário pelo "id"
         if(aulaexiste){
-            const aulas = await AulaRepository.deleteAulas(id) // deleta usuario pelo "id" 
-            return {
-                statusCode: 200,
-                data: aulas
+            const del = await AulaRepository.deleteAulas(id) // deleta usuario pelo "id" 
+            if (del.acknowledged) {
+                return {
+                    statusCode: 200,
+                    data: "Aula deletada com sucesso!"
+                }
+            } else {
+                return {
+                    statusCode: 500,
+                    data: "Erro ao deletar aula!"
+                }
             }
         } else {
             return {
