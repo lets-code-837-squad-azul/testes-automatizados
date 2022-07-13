@@ -56,10 +56,17 @@ const deleteProfessores = async (id) =>{
     try {
         const profexiste = await ProfessorRepository.findProfessoresByid(id) // filtra usuário pelo "id"
         if(profexiste){
-            const Professor = await ProfessorRepository.deleteProfessores(id) // deleta usuario pelo "id" 
-            return {
-                statusCode: 200,
-                data: Professor
+            const del = await ProfessorRepository.deleteProfessores(id) // deleta usuario pelo "id" 
+            if (del.acknowledged) {
+                return {
+                    statusCode: 200,
+                    data: "Professor deletado com sucesso!"
+                }
+            } else {
+                return {
+                    statusCode: 500,
+                    data: "Erro ao deletar professor!"
+                }
             }
         } else {
             return {
