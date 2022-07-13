@@ -57,10 +57,17 @@ const deleteAlunos = async (id) =>{
     try {
         const alunoexiste = await AlunosRepository.findAlunoByid(id) // filtra usuário pelo "id"
         if(alunoexiste){
-            const alunos = await AlunosRepository.deleteAlunos(id) // deleta usuario pelo "id" 
-            return {
-                statusCode: 200,
-                data: alunos
+            const del = await AlunosRepository.deleteAlunos(id) // deleta usuario pelo "id" 
+            if (del.acknowledged) {
+                return {
+                    statusCode: 200,
+                    data: "Aluno deletado com sucesso!"
+                }
+            } else {
+                return {
+                    statusCode: 500,
+                    data: "Erro ao deletar aluno!"
+                }
             }
         } else {
             return {

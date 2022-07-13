@@ -1,12 +1,12 @@
 {
   "name": "testes-automatizados",
   "version": "1.0.0",
-  "description": "**Sobre:**",
+  "description": "Projeto de testes automatizados utilizando BDD e Jest",
   "main": "src/server.js",
   "scripts": {
     "cucumber": "cucumber-js",
     "dev": "nodemon --inspect src/server.js",
-    "jest": "jest"
+    "jest": "jest --forceExit"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "chai": "^4.3.6",
     "cucumber": "^6.0.7",
     "jest": "^28.1.2",
-    "mockingoose": "^2.15.2",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
   }
 }

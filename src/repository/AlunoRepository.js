@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const Alunos = mongoose.model('Alunos') //SCHEMA ("tabela")
+const Alunos = require('../models/Alunos') //SCHEMA ("tabela")
 
 // METODO CRUD ALUNO
 
