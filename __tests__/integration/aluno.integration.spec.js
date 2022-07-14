@@ -7,22 +7,25 @@ const request = require('supertest');
 // Importando o app (servidor)
 const app = require('../../src/app');
 
+//  Importando o gerador de dados aleatórios
+const { faker } = require('@faker-js/faker');
 
 //  Aqui começam os testes de integração
 describe('Testes integrados do Aluno', () => {
 
     test('Deve cadastrar um novo aluno caso o mesmo ainda não exista', async () => {
+        
         //  Dados do aluno a ser cadastrado
         const aluno = {
-            nome: 'Aluno Teste',
-            email: 'aluno@teste.com',
-            senha: '123456',
-            telefone: '11 99999-9999',
-            cpf: '12345678900',
+            nome: faker.name.firstName(),
+            email: faker.internet.email(),
+            senha: faker.internet.password(),
+            telefone: faker.phone.number(),
+            cpf: faker.random.numeric(11),
             endereco: {
-                rua: 'Rua Teste',
-                numero: '123',
-                cep: '12345-678'
+                rua: faker.address.street(),
+                numero: faker.random.numeric(4),
+                cep: faker.address.zipCode(),
             }
         };
 
