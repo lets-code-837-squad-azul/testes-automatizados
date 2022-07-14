@@ -1,4 +1,4 @@
-const AlunosRepository = require('../repository/AlunoRepository') // METODO CRUD ALUNO
+const AlunosRepository = require('../repositories/AlunoRepository') // METODO CRUD ALUNO
 
 // REGRA DE NEGÓCIO
 
