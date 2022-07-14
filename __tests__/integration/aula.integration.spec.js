@@ -7,56 +7,54 @@ const request = require('supertest');
 // Importando o app (servidor)
 const app = require('../../src/app');
 
+//  Importando o gerador de dados aleatórios
+const { faker } = require('@faker-js/faker');
+
 
 //  Aqui começam os testes de integração
 describe('Testes integrados da Aula', () => {
 
     test('Deve cadastrar uma nova aula caso a mesma ainda não exista', async () => {
+
         //  Dados da aula a ser cadastrada
         const aula = {
             aluno: {
-                nome: 'Aluno Teste',
-                email: 'aluno@teste.com',
-                senha: '123456',
-                telefone: '11 99999-9999',
-                cpf: '12345678900',
+                nome: faker.name.firstName(),
+                email: faker.internet.email(),
+                senha: faker.internet.password(),
+                telefone: faker.phone.number(),
+                cpf: faker.random.numeric(11),
                 endereco: {
-                    rua: 'Rua Teste',
-                    numero: '123',
-                    cep: '12345-678'
+                    rua: faker.address.street(),
+                    numero: faker.random.numeric(4),
+                    cep: faker.address.zipCode(),
                 }
             },
             professor: {
-                nome: 'Professor Teste',
-                email: 'professor@teste.com',
-                senha: '123456',
-                telefone: '11 99999-9999',
-                cpf: '12345678901',
+                nome: faker.name.firstName(),
+                email: faker.internet.email(),
+                senha: faker.internet.password(),
+                telefone: faker.phone.number(),
+                cpf: faker.random.numeric(11),
                 endereco: {
-                    rua: 'Rua Teste',
-                    numero: '123',
-                    cep: '12345-678'
+                    rua: faker.address.street(),
+                    numero: faker.random.numeric(4),
+                    cep: faker.address.zipCode(),
                 },
-                disciplina: 'Disciplina Teste'
+                disciplina: faker.random.word()
             },
-            disciplina: 'Disciplina Teste',
-            status: 'Status Teste'    
+            status: 'pendente'
         };
+
+        //  Adicionado disciplina da aula = disciplina do professor
+        aula.disciplina = aula.professor.disciplina;
 
         //  Realizando o cadastro da aula
         const response = await request(app).post('/api/aula').send(aula);
 
         //  Verificando se a aula foi cadastrada
-        // expect(response.statusCode).toBe(201);
-        // expect(response.body.aluno).toBe(aula.aluno);
-        // expect(response.body.professor).toBe(aula.professor);
-        // expect(response.body.disciplina).toBe(aula.disciplina);
-        // expect(response.body.status).toBe(aula.status);
-
         expect(response.statusCode).toBe(201);
-        expect(response.body.aluno).toStrictEqual(aula.aluno);
-        expect(response.body.professor).toStrictEqual(aula.professor);
-        expect(response.body.disciplina).toStrictEqual(aula.disciplina);
-        expect(response.body.status).toStrictEqual(aula.status);
+        expect(response.body.disciplina).toBe(aula.disciplina);
+        expect(response.body.status).toBe(aula.status);
     });
 });
