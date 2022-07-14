@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "5917ad79-70ca-4397-8332-8a88dbfbb874",
+		"name": "Edu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21428768"
+	},
+	"item": [
+		{
+			"name": "Alunos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"João\",\r\n    \"email\": \"joao@email.com\",\r\n    \"senha\": \"123321\",\r\n    \"telefone\": \"23 12332449\",\r\n    \"cpf\": \"11111111111\",\r\n    \"endereco\": {\"rua\": \"Nome da Rua\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/aluno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"aluno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Professores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"João\",\r\n    \"email\": \"joao@email.com\",\r\n    \"senha\": \"123321\",\r\n    \"telefone\": \"23 12332449\",\r\n    \"cpf\": \"11111111111\",\r\n    \"endereco\": {\"rua\": \"Nome da Rua\"},\r\n    \"disciplina\": \"Algorítmo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/professor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"professor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aulas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"aluno\": {\"nome\": \"João\"},\r\n    \"professor\": {\"nome\": \"Maria\"},\r\n    \"disciplina\": \"Algorítmo\",\r\n    \"status\": \"Ativo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/aula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"aula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/aula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"aula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Professores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/aula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"aula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aulas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/aula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"aula"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
