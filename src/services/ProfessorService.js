@@ -1,4 +1,4 @@
-const ProfessorRepository = require('../repository/ProfessorRepository') // METODO CRUD ALUNO PROFESSOR
+const ProfessorRepository = require('../repositories/ProfessorRepository') // METODO CRUD ALUNO PROFESSOR
 
 // REGRA DE NEGÓCIO
 
