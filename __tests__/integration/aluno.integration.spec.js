@@ -18,10 +18,10 @@ describe('Testes integrados do Aluno', () => {
             email: 'aluno@teste.com',
             senha: '123456',
             telefone: '11 99999-9999',
-            cpf: '12345678900',
+            cpf: '6498465158',
             endereco: {
                 rua: 'Rua Teste',
-                numero: '123',
+                numero: '12345',
                 cep: '12345-678'
             }
         };
@@ -36,5 +36,6 @@ describe('Testes integrados do Aluno', () => {
         expect(response.body.senha).toBe(aluno.senha);
         expect(response.body.telefone).toBe(aluno.telefone);
         expect(response.body.cpf).toBe(aluno.cpf);
+        expect(response.body.endereco).toBe(aluno.endereco);
     });
 });

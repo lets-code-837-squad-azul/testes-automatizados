@@ -18,7 +18,7 @@ describe('Testes integrados do Professor', () => {
             email: 'professor@teste.com',
             senha: '123456',
             telefone: '11 99999-9999',
-            cpf: '12345678901',
+            cpf: '4984652468',
             endereco: {
                 rua: 'Rua Teste',
                 numero: '123',
