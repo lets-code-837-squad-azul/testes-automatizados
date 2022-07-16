@@ -10,7 +10,7 @@ const alunoModel = require('../../src/models/Alunos');
 const mockingoose = require('mockingoose');
 
 //  Importando o gerador de dados aleatórios
-const faker = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker');
 
 //  Limpando os mocks
 afterEach(() => {
@@ -21,34 +21,26 @@ jest.setTimeout(30000);
 
 //  Aqui iniciam os testes unitários
 describe('Teste unitário do aluno', () => {
+
+    //  Teste unitário de cadastro de aluno
+    //  Problema de timeout do mockingoose
     test.skip('Deve criar um novo aluno no banco', async () => {
+
+        //  Informações do aluno
         const aluno = {
             nome: faker.name.firstName(),
             email: faker.internet.email(),
             senha: faker.internet.password(),
-            telefone: faker.phone.phoneNumber(),
-            cpf: faker.random.number({ min: 10000000000, max: 99999999999 }),
+            telefone: faker.phone.number(),
+            cpf: faker.random.numeric(11),
             endereco: {
-                rua: faker.address.streetName(),
-                numero: faker.random.number({ min: 1, max: 1000 }),
+                rua: faker.address.street(),
+                numero: faker.random.numeric(4),
                 cep: faker.address.zipCode(),
             }
         };
 
-        const aluno = {
-            nome: 'Aluno teste',
-            email: 'aluno@teste.com',
-            senha: '123456',
-            telefone: '11999999999',
-            cpf: '12345678901',
-            endereco: {
-                rua: 'Rua teste',
-                numero: '123',
-                cep: '12345-678',
-            }
-        }
-
-        //  Forçando o retorno null para o findOne
+        //  Esperando retorno null do findOne
         mockingoose(alunoModel).toReturn(null, 'findOne');
 
         //  Fazendo a requisição
@@ -59,6 +51,4 @@ describe('Teste unitário do aluno', () => {
         //  Verificando o retorno
         expect(response.statusCode).toBe(201);
     });
-
-    
 });

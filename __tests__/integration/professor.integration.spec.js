@@ -7,26 +7,30 @@ const request = require('supertest');
 // Importando o app (servidor)
 const app = require('../../src/app');
 
+//  Imporando o gerador de dados aleatórios
+const { faker } = require('@faker-js/faker');
+
 
 //  Aqui começam os testes de integração
 describe('Testes integrados do Professor', () => {
 
     test('Deve cadastrar um novo professor caso o mesmo ainda não exista', async () => {
+        
         //  Dados do professor a ser cadastrado
         const professor = {
-            nome: 'Professor Teste',
-            email: 'professor@teste.com',
-            senha: '123456',
-            telefone: '11 99999-9999',
-            cpf: '4984652468',
+            nome: faker.name.firstName(),
+            email: faker.internet.email(),
+            senha: faker.internet.password(),
+            telefone: faker.phone.number(),
+            cpf: faker.random.numeric(11),
             endereco: {
-                rua: 'Rua Teste',
-                numero: '123',
-                cep: '12345-678'
+                rua: faker.address.street(),
+                numero: faker.random.numeric(4),
+                cep: faker.address.zipCode(),
             },
-            disciplina: 'Disciplina Teste'
+            disciplina: faker.random.word()
         };
-
+            
         //  Realizando o cadastro do professor
         const response = await request(app).post('/api/professor').send(professor);
 
@@ -37,15 +41,6 @@ describe('Testes integrados do Professor', () => {
         expect(response.body.senha).toBe(professor.senha);
         expect(response.body.telefone).toBe(professor.telefone);
         expect(response.body.cpf).toBe(professor.cpf);
-        expect(response.body.endereco).toBe(professor.endereco);
         expect(response.body.disciplina).toBe(professor.disciplina);
-
-        // expect(response.statusCode).toBe(201);
-        // expect(response.body.nome).toStrictEqual(professor.nome);
-        // expect(response.body.email).toStrictEqual(professor.email);
-        // expect(response.body.senha).toStrictEqual(professor.senha);
-        // expect(response.body.telefone).toStrictEqual(professor.telefone);
-        // expect(response.body.cpf).toStrictEqual(professor.cpf);
-        // expect(response.body.disciplina).toStrictEqual(professor.disciplina);
     });
 });
