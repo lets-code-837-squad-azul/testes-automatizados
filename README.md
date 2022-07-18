@@ -4,7 +4,7 @@
 
 **Sobre:** 
 
-O XXX chegou / tem como finalidade viabilizar a conecção de pessoas que necessitam de uma mentoria/tutoria em alguma displina e pessoas ávidas/entusiasmadas por ensinar!
+O XXX chegou / tem como finalidade viabilizar a conexão de pessoas que necessitam de uma mentoria/tutoria em alguma disciplina e pessoas ávidas/entusiasmadas por ensinar!
 
 Junte-se a essa rede de apoio para enriquecer seu conhecimento e fortalecer o desenvolvimento de suas/novas habilidades!
 
