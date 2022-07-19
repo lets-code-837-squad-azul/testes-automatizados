@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-07-19T03:49:29.876Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="8gDOa_ekSsdPinDiEPvb" version="20.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-19T04:45:27.417Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="jyPanv6McfSglMShYqmf" version="20.1.1" type="github">
   <diagram id="kqs5eeEmJJIsxKedB7xC" name="Page-1">
     <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="mBvD61I-dTzUrRSu8Mbg-1" value="Usuário" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="30" y="40" width="160" height="376" as="geometry">
+          <mxGeometry x="30" y="40" width="160" height="428" as="geometry">
             <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -61,8 +61,14 @@
         <mxCell id="mBvD61I-dTzUrRSu8Mbg-13" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="mBvD61I-dTzUrRSu8Mbg-1" vertex="1">
           <mxGeometry y="342" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="mBvD61I-dTzUrRSu8Mbg-14" value="métodos" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" parent="mBvD61I-dTzUrRSu8Mbg-1" vertex="1">
+        <mxCell id="KeHa9Bvy7D6DvA_QTyWj-85" value="Cadastro" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="mBvD61I-dTzUrRSu8Mbg-1">
           <mxGeometry y="350" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="KeHa9Bvy7D6DvA_QTyWj-86" value="Login" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="mBvD61I-dTzUrRSu8Mbg-1">
+          <mxGeometry y="376" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="mBvD61I-dTzUrRSu8Mbg-14" value="Escolher aula" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" parent="mBvD61I-dTzUrRSu8Mbg-1" vertex="1">
+          <mxGeometry y="402" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="mBvD61I-dTzUrRSu8Mbg-15" value="Monitor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
           <mxGeometry x="280" y="300" width="160" height="112" as="geometry">
